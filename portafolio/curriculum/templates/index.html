@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <body style="background-color:#E8F1D4;">
+{% block header_title %}
+<head>
+    <style>
+        h1.normal {
+            border: 20px groove black;
+            padding: 50px;
+          }
+        </style>
+    <center>
+        <h1 class="normal">Bienvenido a la presentación de las competencias 3 & 4</h1>
+    </center>
+</head>
+{% endblock %}
+
+
+{% block content %}
+<head>
+    <style>
+    .nav {
+      background-color: #F0FFF0; 
+      list-style-type: none;
+      text-align: center;
+      margin: 0;
+      padding: 0;
+    }
+    
+    .nav li {
+      display: inline-block;
+      font-size: 20px;
+      padding: 20px;
+    }
+    </style>
+</head>  
+
+<body>
+    <center>
+        <h1 style="background-color:#B8860B;">
+            <p style="color:white;">Selecciona una opcion:</p></h1>
+    </center>  
+    <ul class="nav">
+        <li><a href="info"> Curriculum personal</a></li>
+        <li><a href="sendjson"> Información en formato json</a></li>
+        <li><a href="jsonskills"> Habilidades en formato json</a></li>
+        <li><a href="jsonjobs"> Trabajos en formato json</a></li>
+    </u1>
+</body>
+
+{% endblock %}
+</html>

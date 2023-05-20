@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <body style="background-color:#E8F1D4;">
+{% block header_title %}
+<head>
+  <h1 style="background-color:#5F9EA0;"><p style="color:white;">
+    {{ data.nombres }} {{ data.primer_apellido}} {{data.segundo_apellido}}</h1>
+  
+  <style>
+		table {
+			border:10px solid #b3adad;
+      border-image: linear-gradient(#20B2AA, #C0C0C0) 30;
+			padding:10px;
+		}
+		table th {
+			border:4px solid #b3adad;
+			padding:5px;
+			background: #f0f0f0;
+			color: #313030;
+		}
+		table td {
+			border:4px solid #b3adad;
+			text-align:left;
+			padding:5px;
+			background: #ffffff;
+			color: #313030;
+		}
+	</style>
+
+</head>
+{% endblock %}
+
+
+{% block content %}
+<body>
+   
+    <ul>
+      <table>
+        <tbody>
+      <tr>
+        <td>Fecha de nacimiento:</td> <td>{{ data.fecha_nacimiento }}</td>
+      </tr>
+      <tr>
+        <td>Teléfono de contacto:</td> <td>{{ data.celular }}</td>
+      </tr>
+      <tr>
+        <td>Correo electrónico:</td> <td>{{ data.correo }}</td>
+      </tr>
+      <tr>
+        <td>Domicilio actual:</td> <td>{{ data.domicilio }}</td>
+      </tr>
+      <tr>  
+        <td>Genero:</td> <td>{{ data.genero }}</td>
+      </tr>
+      <tr>
+        <td>Objetivo profesional:</td> <td>{{ data.objetivo }}</td>
+      </tr>
+      <tr>
+        <td>Expectativa salarial:</td> <td>{{ data.salario_esperado }}</td>
+      </tr>
+      <tbody>
+    </table>
+    </ul>
+
+    <h1 style="background-color:#20B2AA;"><p style="color:white;">Habilidades</p></h1>
+    <style>
+      div.container{
+        text-align: center;
+      }
+      ul.a {
+        list-style-type: circle;
+        border: 20px double red;
+        border-radius: 5px;
+        display: inline-block;
+        text-align: left;
+      }
+      ul.b {
+        list-style-type: upper-roman;
+      }
+    </style>
+    <img src="https://www.python.org/static/community_logos/python-logo-master-v3-TM.png" alt="Python" style="width:500px">
+    <img src="https://logos-world.net/wp-content/uploads/2020/09/Oracle-Logo.png" alt="Oracle" style="width:300px">
+    <div class="container">
+    <ul class="a">
+          {% for skill in skills %}
+          <li><b> {{skill}} </li></b>
+          {% endfor %}
+    </ul>
+  </div>
+
+    <h1 style="background-color:#5F9EA0;"><p style="color:white;">Historial Laboral </h1>
+      <style>
+        p.inset {
+          border-style: inset;
+        }
+      </style>        
+    <ul class="b">
+          {% for key, value in trabajos.items %} 
+            <li> <h3><p class="inset">{{key.1}} </h3></p> - 
+            <b>Año de ingreso:</b>{{value.fecha_inicio}} <br>- 
+            <b>Año de salida:</b> {{value.fecha_fin}} <br>- 
+            <b>Puesto desempeñado:</b> {{value.Puesto}} </li>
+          {% endfor %}
+    </ul>
+
+    <form>
+      <input type="button" value="Regresar" onclick="history.back()">
+     </form>
+</body>
+
+
+{% endblock %}
+</html>
